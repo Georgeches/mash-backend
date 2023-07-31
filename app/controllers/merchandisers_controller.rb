@@ -1,5 +1,6 @@
 class MerchandisersController < ApplicationController
   before_action :authenticate_merchandiser, only: [:show]
+  skip_before_action :verify_authenticity_token, only: :create
 
   def create
     merchandiser = Merchandiser.create(merchandiser_params)
@@ -34,7 +35,7 @@ class MerchandisersController < ApplicationController
 
 
   def merchandiser_params
-    params.permit(:name, :id_number, :phone_number, :vehicle_registration, :status, :profile_picture, :password_confirmation)
+    params.permit(:name, :id_number, :phone_number, :vehicle_registration, :status, :profile_picture, :password_confirmation,:password)
   end
 
 
