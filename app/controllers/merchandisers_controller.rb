@@ -6,7 +6,14 @@ class MerchandisersController < ApplicationController
     merchandiser = Merchandiser.create(merchandiser_params)
     if merchandiser.valid?
       session[:merchandiser_id] = merchandiser.id
-      render json: { id: merchandiser.id, merchandisername: merchandiser.merchandisername, address: merchandiser.address, phone: merchandiser.phone }, status: :created
+      render json: {  id_number:merchandiser.id_number,
+        name: merchandiser.name,
+        phone_number:merchandiser.phone_number,
+        email:merchandiser.email , 
+        vehicle_registration: merchandiser.vehicle_registration,
+        profile_picture:merchandiser.profile_picture,
+         status: merchandiser.status }, status: :created
+  
     else
       render json: { error: merchandiser.errors.full_messages }, status: :unprocessable_entity
     end
