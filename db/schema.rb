@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_31_162401) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_31_171412) do
   create_table "admins", force: :cascade do |t|
     t.string "username"
     t.string "password"
@@ -20,6 +20,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_162401) do
   end
 
   create_table "merchandisers", force: :cascade do |t|
+    t.string "name"
+    t.string "id_number"
+    t.string "phone_number"
+    t.string "vehicle_registration"
+    t.string "status"
+    t.string "email"
+    t.string "profile_picture"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_162401) do
     t.integer "merchandiser_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
     t.index ["merchandiser_id"], name: "index_orders_on_merchandiser_id"
   end
 
