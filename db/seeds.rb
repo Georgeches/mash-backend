@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Admin.create(username: 'admin1', password: 'admin_password_1')
-Admin.create(username: 'admin2', password: 'admin_password_2')
+Admin.create(username: 'Eric Arama', password: 'eric123')
+Admin.create(username: 'George Chesire', password: 'george123')
 
 # Seed data for Merchandisers
 Merchandiser.create(
@@ -32,14 +32,14 @@ Merchandiser.create(
 
 # Seed data for Orders
 Order.create(
-  customer_name: 'Customer 1',
+  customer_name: 'OneStop Enterprises',
   products_ordered: 'Product A, Product B',
   date: Date.today,
   location: 'Location A',
   merchandiser_id: Merchandiser.first.id
 )
 Order.create(
-  customer_name: 'Customer 2',
+  customer_name: 'Obama Shop',
   products_ordered: 'Product C, Product D',
   date: Date.today - 1.day,
   location: 'Location B',

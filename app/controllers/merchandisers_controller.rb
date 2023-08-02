@@ -2,6 +2,11 @@ class MerchandisersController < ApplicationController
   before_action :authenticate_merchandiser, only: [:show]
   skip_before_action :verify_authenticity_token, only: :create
 
+  def index
+    merchandisers = Merchandiser.all
+    render json: merchandisers
+  end
+
   def create
     merchandiser = Merchandiser.create(merchandiser_params)
     if merchandiser.valid?
