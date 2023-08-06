@@ -6,7 +6,7 @@ Rails.application.routes.draw do
    resources :orders
   resources :merchandisers
   resources :admins
-post "/create", to: 'merchandisers#create'
+post "/register", to: 'merchandisers#create'
 get "/me", to:'merchandisers#show'
 post "/login", to: 'sessions#create'
 delete '/logout', to:'sessions#destroy'

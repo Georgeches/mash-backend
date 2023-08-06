@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Admin.create(username: 'Eric Arama', password: 'eric123')
-Admin.create(username: 'George Chesire', password: 'george123')
+Admin.create(username: 'EricArama', password: 'eric123',user_type:'admin',id_number:"12345")
+Admin.create(username: 'GeorgeChesire', password: 'george123',user_type:'admin',id_number:'1234')
 
 # Seed data for Merchandisers
 Merchandiser.create(
@@ -16,12 +16,14 @@ Merchandiser.create(
   vehicle_registration: 'ABC123',
   email:'john@gmail.com',
   status: 'Active',
+  user_type:'merchant',
   password: 'john123',
   profile_picture: 'https://th.bing.com/th/id/OIP.xmoqMw4IxOLVAks0X8JBJgHaHx?w=176&h=185&c=7&r=0&o=5&pid=1.7'
 )
 Merchandiser.create(
   name: 'Elon Musk',
   id_number: 'MID67890',
+  user_type: 'merchant',
   phone_number: '9876543210',
   vehicle_registration: 'XYZ789',
   email:'elon@gmail.com',

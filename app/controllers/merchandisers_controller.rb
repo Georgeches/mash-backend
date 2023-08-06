@@ -46,9 +46,12 @@ class MerchandisersController < ApplicationController
   private
 
 
-  def merchandiser_params
-    params.permit(:name, :id_number, :phone_number, :vehicle_registration, :status, :profile_picture, :password_confirmation,:password)
-  end
+  # def merchandiser_params
+  #   params.permit(:name, :id_number, :phone_number, :vehicle_registration, :status, :profile_picture, :password_confirmation,:password)
+  # end
+def merchandiser_params
+  params.require(:merchandiser).permit(:name, :id_number, :phone_number, :vehicle_registration,:email, :status, :profile_picture, :password_confirmation, :password)
+end
 
 
 

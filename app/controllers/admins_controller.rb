@@ -14,10 +14,19 @@ class AdminsController < ApplicationController
         end
     end
 
+    # def create
+    #     admin = Admin.create(admin_params)
+    #     render json: admin, status: :created
+    # end
     def create
-        admin = Admin.create!(admin_params)
-        render json: admin, status: :created
-    end
+  admin = Admin.new(admin_params)
+  if admin.save
+    render json: admin, status: :created
+  else
+    render json: { error: admin.errors.full_messages }, status: :unprocessable_entity
+  end
+end
+
 
     def update
         admin = Admin.find_by(id: params[:id])
@@ -36,6 +45,6 @@ class AdminsController < ApplicationController
 
     private
     def admin_params
-        params.require(:admin).permit(:name, :password)
+        params.require(:admin).permit(:name, :password,:id_number)
     end
 end
