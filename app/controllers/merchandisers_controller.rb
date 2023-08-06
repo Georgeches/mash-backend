@@ -11,8 +11,10 @@ class MerchandisersController < ApplicationController
     merchandiser = Merchandiser.create(merchandiser_params)
     if merchandiser.valid?
       session[:merchandiser_id] = merchandiser.id
-      render json: {  id_number:merchandiser.id_number,
+      render json: {  
+        id_number:merchandiser.id_number,
         name: merchandiser.name,
+        password: merchandiser.password,
         phone_number:merchandiser.phone_number,
         email:merchandiser.email , 
         vehicle_registration: merchandiser.vehicle_registration,
